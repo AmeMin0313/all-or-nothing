@@ -81,70 +81,31 @@
 .latest-news-card:hover .latest-news-arrow{transform:translate(4px,-50%)}
 @media(max-width:760px){.event-x-head{display:block;padding:28px}.event-x-head .gold-link{display:inline-block;margin-top:22px}.latest-news-card{padding:28px 55px 28px 25px}.latest-news-arrow{right:22px}}
 
-/* ABOUT: full-width copy layout */
-.about-copy {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-}
-.about-copy .about-main {
-  width: 100%;
-  max-width: none;
-}
-.about-copy .about-main p,
-.about-copy .about-main .about-title,
-.about-copy .about-main .about-subtitle {
-  width: 100%;
-  max-width: none;
-}
 
-/* ABOUT copy: prevent premature wrapping and let the copy use the full frame */
-.about-copy {
-  width: 100% !important;
-  max-width: none !important;
-}
-.about-copy .about-main,
-.about-copy .about-main p,
-.about-copy .about-title,
-.about-copy .about-subtitle {
-  width: 100% !important;
-  max-width: none !important;
-}
-.about-copy .about-main p {
-  white-space: nowrap;
-}
-@media (max-width: 700px) {
-  .about-copy .about-main p {
-    white-space: normal;
-  }
-}
-
-
-/* ABOUT — use the entire frame for the introduction */
-.about-grid {
+/* Final ABOUT layout correction */
+#about .about-content,
+.about-content {
   display: block !important;
   width: 100% !important;
+  max-width: none !important;
+  grid-template-columns: 1fr !important;
+  columns: 1 !important;
 }
-.about-content {
+#about .about-content > *,
+.about-content > * {
   width: 100% !important;
   max-width: none !important;
 }
-.about-content p {
+#about .about-content p,
+#about .about-content .about-text,
+#about .about-content .about-copy,
+#about .about-content .about-main {
   width: 100% !important;
   max-width: none !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  white-space: normal !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
 }
-.about-content .lead {
-  white-space: nowrap !important;
-}
-@media (min-width: 701px) {
-  .about-content p {
-    white-space: nowrap !important;
-  }
-}
-@media (max-width: 700px) {
-  .about-content p {
-    white-space: normal !important;
-  }
+#about .about-content br {
+  display: block !important;
 }
