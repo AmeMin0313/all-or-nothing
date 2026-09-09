@@ -159,3 +159,45 @@
     overflow-wrap: anywhere !important;
   }
 }
+
+
+/* FINAL ABOUT: wide single-column layout */
+#about .about-inner {
+  width: min(92vw, 1200px) !important;
+  max-width: 1200px !important;
+  margin-inline: auto !important;
+}
+#about .about-wide-copy {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 48px auto 0 !important;
+  padding: 42px 56px !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  text-align: center !important;
+  border: 1px solid rgba(180, 150, 90, .28) !important;
+}
+#about .about-wide-copy p {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 0 18px !important;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  text-align: center !important;
+}
+#about .about-wide-copy p:last-child {
+  margin-bottom: 0 !important;
+}
+@media (max-width: 700px) {
+  #about .about-inner {
+    width: 92vw !important;
+  }
+  #about .about-wide-copy {
+    padding: 32px 20px !important;
+  }
+  #about .about-wide-copy p {
+    white-space: normal !important;
+  }
+}
