@@ -118,3 +118,33 @@
     white-space: normal;
   }
 }
+
+
+/* ABOUT — use the entire frame for the introduction */
+.about-grid {
+  display: block !important;
+  width: 100% !important;
+}
+.about-content {
+  width: 100% !important;
+  max-width: none !important;
+}
+.about-content p {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.about-content .lead {
+  white-space: nowrap !important;
+}
+@media (min-width: 701px) {
+  .about-content p {
+    white-space: nowrap !important;
+  }
+}
+@media (max-width: 700px) {
+  .about-content p {
+    white-space: normal !important;
+  }
+}
