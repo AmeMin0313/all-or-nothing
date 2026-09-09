@@ -81,31 +81,81 @@
 .latest-news-card:hover .latest-news-arrow{transform:translate(4px,-50%)}
 @media(max-width:760px){.event-x-head{display:block;padding:28px}.event-x-head .gold-link{display:inline-block;margin-top:22px}.latest-news-card{padding:28px 55px 28px 25px}.latest-news-arrow{right:22px}}
 
+/* ABOUT: full-width copy layout */
+.about-copy {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+.about-copy .about-main {
+  width: 100%;
+  max-width: none;
+}
+.about-copy .about-main p,
+.about-copy .about-main .about-title,
+.about-copy .about-main .about-subtitle {
+  width: 100%;
+  max-width: none;
+}
 
-/* Final ABOUT layout correction */
+/* ABOUT copy: prevent premature wrapping and let the copy use the full frame */
+.about-copy {
+  width: 100% !important;
+  max-width: none !important;
+}
+.about-copy .about-main,
+.about-copy .about-main p,
+.about-copy .about-title,
+.about-copy .about-subtitle {
+  width: 100% !important;
+  max-width: none !important;
+}
+.about-copy .about-main p {
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .about-copy .about-main p {
+    white-space: normal;
+  }
+}
+
+/* Final ABOUT layout fix */
 #about .about-content,
-.about-content {
+#about .about-copy,
+#about .about-main,
+#about .about-text,
+#about .content,
+#about .inner {
+  width: 100% !important;
+  max-width: none !important;
+  flex: 1 1 100% !important;
+  grid-column: 1 / -1 !important;
+}
+#about .about-content,
+#about .about-copy,
+#about .about-main {
   display: block !important;
-  width: 100% !important;
-  max-width: none !important;
-  grid-template-columns: 1fr !important;
-  columns: 1 !important;
 }
-#about .about-content > *,
-.about-content > * {
-  width: 100% !important;
-  max-width: none !important;
-}
+#about p,
 #about .about-content p,
-#about .about-content .about-text,
-#about .about-content .about-copy,
-#about .about-content .about-main {
+#about .about-copy p,
+#about .about-main p,
+#about .about-text p {
   width: 100% !important;
   max-width: none !important;
-  white-space: normal !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
   word-break: keep-all !important;
   overflow-wrap: normal !important;
+  text-align: center !important;
 }
-#about .about-content br {
-  display: block !important;
+@media (max-width: 700px) {
+  #about p,
+  #about .about-content p,
+  #about .about-copy p,
+  #about .about-main p,
+  #about .about-text p {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
 }
