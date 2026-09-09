@@ -81,123 +81,55 @@
 .latest-news-card:hover .latest-news-arrow{transform:translate(4px,-50%)}
 @media(max-width:760px){.event-x-head{display:block;padding:28px}.event-x-head .gold-link{display:inline-block;margin-top:22px}.latest-news-card{padding:28px 55px 28px 25px}.latest-news-arrow{right:22px}}
 
-/* ABOUT: full-width copy layout */
-.about-copy {
+/* ABOUT — same visual system as the other sections */
+.about-wide-copy {
+  width: 100%;
+  max-width: none;
+  padding: 8px 0 0;
+}
+.about-wide-copy p {
   width: 100%;
   max-width: none;
   margin: 0;
-}
-.about-copy .about-main {
-  width: 100%;
-  max-width: none;
-}
-.about-copy .about-main p,
-.about-copy .about-main .about-title,
-.about-copy .about-main .about-subtitle {
-  width: 100%;
-  max-width: none;
-}
-
-/* ABOUT copy: prevent premature wrapping and let the copy use the full frame */
-.about-copy {
-  width: 100% !important;
-  max-width: none !important;
-}
-.about-copy .about-main,
-.about-copy .about-main p,
-.about-copy .about-title,
-.about-copy .about-subtitle {
-  width: 100% !important;
-  max-width: none !important;
-}
-.about-copy .about-main p {
+  padding: 13px 0;
+  color: #a9a299;
+  font-family: "Noto Serif JP", serif;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: .08em;
   white-space: nowrap;
 }
-@media (max-width: 700px) {
-  .about-copy .about-main p {
+.about-wide-copy p:first-child {
+  color: #d8b76a;
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: 27px;
+  letter-spacing: .10em;
+  padding-top: 0;
+}
+.about-wide-copy p:nth-child(2) {
+  color: #eee9df;
+  font-size: 21px;
+}
+.about-wide-copy p:nth-child(3) {
+  color: #a9a299;
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: 22px;
+  letter-spacing: .10em;
+}
+.about-wide-copy p:last-child {
+  color: #b18a45;
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: 18px;
+  letter-spacing: .14em;
+  padding-bottom: 0;
+}
+@media (max-width: 760px) {
+  .about-wide-copy p {
     white-space: normal;
+    font-size: 16px;
   }
-}
-
-/* Final ABOUT layout fix */
-#about .about-content,
-#about .about-copy,
-#about .about-main,
-#about .about-text,
-#about .content,
-#about .inner {
-  width: 100% !important;
-  max-width: none !important;
-  flex: 1 1 100% !important;
-  grid-column: 1 / -1 !important;
-}
-#about .about-content,
-#about .about-copy,
-#about .about-main {
-  display: block !important;
-}
-#about p,
-#about .about-content p,
-#about .about-copy p,
-#about .about-main p,
-#about .about-text p {
-  width: 100% !important;
-  max-width: none !important;
-  white-space: nowrap !important;
-  overflow: visible !important;
-  word-break: keep-all !important;
-  overflow-wrap: normal !important;
-  text-align: center !important;
-}
-@media (max-width: 700px) {
-  #about p,
-  #about .about-content p,
-  #about .about-copy p,
-  #about .about-main p,
-  #about .about-text p {
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
-  }
-}
-
-
-/* FINAL ABOUT: wide single-column layout */
-#about .about-inner {
-  width: min(92vw, 1200px) !important;
-  max-width: 1200px !important;
-  margin-inline: auto !important;
-}
-#about .about-wide-copy {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 48px auto 0 !important;
-  padding: 42px 56px !important;
-  box-sizing: border-box !important;
-  display: block !important;
-  text-align: center !important;
-  border: 1px solid rgba(180, 150, 90, .28) !important;
-}
-#about .about-wide-copy p {
-  display: block !important;
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 0 18px !important;
-  white-space: nowrap !important;
-  word-break: keep-all !important;
-  overflow-wrap: normal !important;
-  text-align: center !important;
-}
-#about .about-wide-copy p:last-child {
-  margin-bottom: 0 !important;
-}
-@media (max-width: 700px) {
-  #about .about-inner {
-    width: 92vw !important;
-  }
-  #about .about-wide-copy {
-    padding: 32px 20px !important;
-  }
-  #about .about-wide-copy p {
-    white-space: normal !important;
-  }
+  .about-wide-copy p:first-child { font-size: 22px; }
+  .about-wide-copy p:nth-child(2) { font-size: 18px; }
+  .about-wide-copy p:nth-child(3) { font-size: 18px; }
+  .about-wide-copy p:last-child { font-size: 16px; }
 }
