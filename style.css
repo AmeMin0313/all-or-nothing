@@ -97,3 +97,24 @@
   width: 100%;
   max-width: none;
 }
+
+/* ABOUT copy: prevent premature wrapping and let the copy use the full frame */
+.about-copy {
+  width: 100% !important;
+  max-width: none !important;
+}
+.about-copy .about-main,
+.about-copy .about-main p,
+.about-copy .about-title,
+.about-copy .about-subtitle {
+  width: 100% !important;
+  max-width: none !important;
+}
+.about-copy .about-main p {
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .about-copy .about-main p {
+    white-space: normal;
+  }
+}
