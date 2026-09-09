@@ -1,19 +1,7 @@
-# ALL OR NOTHING HP — Cinematic Entrance Prototype
+ALL OR NOTHING - GitHub Pages
 
-トップページに「店内へ入っていく」演出を追加した版です。
+Upload all files in this folder to the root of a GitHub repository.
+Enable Settings > Pages > Deploy from a branch > main / root.
 
-## 演出
-1. 暗い店内からスタート
-2. ロゴと入口が徐々に浮かび上がる
-3. ENTERを押すと左右の深紅のカーテンが開く
-4. 店内の光が強くなり、カメラが奥へ進むように背景がズーム
-5. 金色の粒子が漂う
-6. 約2秒後にABOUTへスムーズに移動
-
-ENTERを押さずにSCROLLしても同様に入口演出を開始します。
-
-## ファイル
-- index.html
-- style.css
-- logo.png
-- hero-interior.png
+The EVENT section uses the official X embedded timeline for @VRC_AON.
+The site is static and requires no build step.

@@ -97,17 +97,23 @@
         <span>03</span>
         <h2>EVENT</h2>
       </div>
-      <div class="event-feature">
-        <div class="event-date"><span>OFFICIAL X</span><strong>@VRC_AON</strong></div>
-        <div class="event-detail">
-          <p class="role">LATEST INFORMATION</p>
-          <h3>ALL OR NOTHING</h3>
-          <p>イベントの最新情報・開催告知は、公式Xのタイムラインからご確認いただけます。</p>
-          <div class="x-timeline-wrap">
-            <a class="twitter-timeline" data-lang="ja" data-theme="dark" data-height="520" data-chrome="noheader nofooter noborders transparent" data-dnt="true" href="https://x.com/VRC_AON?ref_src=twsrc%5Etfw">Posts by @VRC_AON</a>
+      <div class="event-news-wrap">
+        <div class="event-x-head">
+          <div>
+            <p class="role">OFFICIAL X</p>
+            <h3>@VRC_AON</h3>
+            <p>イベントの最新情報・告知はこちらからご覧いただけます。</p>
           </div>
-          <a class="button" href="https://x.com/VRC_AON" target="_blank" rel="noopener noreferrer">VIEW ON X <span>↗</span></a>
+          <a class="gold-link" href="https://x.com/VRC_AON" target="_blank" rel="noopener noreferrer">VIEW OFFICIAL X ↗</a>
         </div>
+
+        <!-- 最新告知：タイトルと日付をここだけ差し替えてください -->
+        <a class="latest-news-card" href="https://x.com/VRC_AON" target="_blank" rel="noopener noreferrer">
+          <div class="latest-news-label">LATEST ANNOUNCEMENT</div>
+          <div class="latest-news-title">最新イベント情報・告知</div>
+          <div class="latest-news-date">2026.09.09</div>
+          <span class="latest-news-arrow">↗</span>
+        </a>
       </div>
     </section>
 
@@ -123,14 +129,36 @@
       </div>
     </section>
 
-    <section id="group" class="section access">
-      <div class="section-heading"><span>05</span><h2>GROUP</h2></div>
-      <div class="access-panel"><div><p class="role">VRCHAT GROUP</p><h3>ALL OR NOTHING</h3><p>イベントの最新情報や参加案内はこちらから。</p><a class="gold-link" href="https://vrchat.com/home/group/grp_cd4a1a2f-d4a1-4ba4-b835-c5b95eab1c69" target="_blank" rel="noopener noreferrer">VIEW GROUP ↗</a></div><div class="access-mark">♠ ♥<br>♦ ♣</div></div>
+    <section id="group" class="section group">
+      <div class="section-heading">
+        <span>05</span>
+        <h2>GROUP</h2>
+      </div>
+      <div class="access-panel">
+        <div>
+          <p class="role">VRCHAT GROUP</p>
+          <h3>ALL OR NOTHING</h3>
+          <p>イベントの最新情報や参加案内はこちらから。</p>
+          <a class="gold-link" href="https://vrchat.com/home/group/grp_cd4a1a2f-d4a1-4ba4-b835-c5b95eab1c69" target="_blank" rel="noopener noreferrer">VIEW GROUP ↗</a>
+        </div>
+        <div class="access-mark">♠ ♥<br>♦ ♣</div>
+      </div>
     </section>
 
     <section id="access" class="section access">
-      <div class="section-heading"><span>06</span><h2>ACCESS</h2></div>
-      <div class="access-panel"><div><p class="role">ACCESS INFORMATION</p><h3>TUESDAY</h3><p>火曜日 XX:XXに以下にリクインをお願い致します。</p><a class="gold-link" href="https://vrchat.com/home/user/usr_7edcdc17-1c4e-4854-98b2-40444abb947e" target="_blank" rel="noopener noreferrer">REQUEST FRIEND ↗</a></div><div class="access-mark">♠ ♥<br>♦ ♣</div></div>
+      <div class="section-heading">
+        <span>06</span>
+        <h2>ACCESS</h2>
+      </div>
+      <div class="access-panel access-request">
+        <div>
+          <p class="role">ENTRY</p>
+          <h3>火曜日 XX:XX</h3>
+          <p>火曜日 XX:XXに以下にリクインをお願い致します。</p>
+          <a class="gold-link" href="https://vrchat.com/home/user/usr_7edcdc17-1c4e-4854-98b2-40444abb947e" target="_blank" rel="noopener noreferrer">REQUEST FRIEND ↗</a>
+        </div>
+        <div class="access-mark">♠ ♥<br>♦ ♣</div>
+      </div>
     </section>
   </main>
 
@@ -138,16 +166,14 @@
     <div class="footer-logo">ALL OR NOTHING</div>
     <p>BUNNY HOST CLUB</p>
     <div class="footer-links">
-      <a href="#" onclick="return false;">X / TWITTER</a>
-      <a href="#" onclick="return false;">VRCHAT GROUP</a>
+      <a href="https://x.com/VRC_AON" target="_blank" rel="noopener noreferrer">X / TWITTER</a>
+      <a href="#group">VRCHAT GROUP</a>
     </div>
     <small>© ALL OR NOTHING</small>
   </footer>
 
   <script>
     const body = document.body;
-    const enterButton = document.querySelector('.enter-button');
-    const entrance = document.querySelector('#entrance');
 
     window.addEventListener('load', () => {
       setTimeout(() => body.classList.add('preloaded'), 250);
@@ -155,10 +181,6 @@
       setTimeout(() => body.classList.add('entered'), 2300);
     });
 
-    // The entrance behaves like opening the doors of the club:
-    // lights come up, curtains part, and the camera moves forward.
-
-    // Let SCROLL also skip the entrance.
 
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
@@ -176,50 +198,6 @@
       observer.observe(el);
     });
 
-    // X official timeline embed.
-    // The official widgets script can take a moment to render, so we also keep a
-    // graceful fallback visible instead of leaving the EVENT section blank.
-    (function() {
-      const wrap = document.querySelector('.x-timeline-wrap');
-      if (!wrap) return;
-
-      const fallback = document.createElement('div');
-      fallback.className = 'x-timeline-fallback';
-      fallback.innerHTML = '<span>OFFICIAL X</span><strong>@VRC_AON</strong><p>最新のイベント情報は公式Xでご確認いただけます。</p><a href="https://x.com/VRC_AON" target="_blank" rel="noopener noreferrer">Xで最新情報を見る ↗</a>';
-      wrap.appendChild(fallback);
-
-      function checkRendered() {
-        const iframe = wrap.querySelector('iframe');
-        if (iframe) {
-          fallback.classList.add('hidden');
-          return true;
-        }
-        return false;
-      }
-
-      function loadWidgets() {
-        if (window.twttr && window.twttr.widgets) {
-          window.twttr.widgets.load(wrap).then(checkRendered);
-          return;
-        }
-        if (document.getElementById('twitter-wjs')) return;
-        const js = document.createElement('script');
-        js.id = 'twitter-wjs';
-        js.async = true;
-        js.src = 'https://platform.twitter.com/widgets.js';
-        js.onload = function() {
-          if (window.twttr && window.twttr.widgets) {
-            window.twttr.widgets.load(wrap).then(checkRendered);
-          }
-        };
-        document.head.appendChild(js);
-      }
-
-      loadWidgets();
-      setTimeout(checkRendered, 3000);
-      setTimeout(checkRendered, 7000);
-    })();
-
     // Tiny ambient particles for the lobby atmosphere.
     const dust = document.querySelector('.gold-dust');
     for (let i = 0; i < 34; i++) {
@@ -231,5 +209,6 @@
       dust.appendChild(p);
     }
   </script>
+  <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
