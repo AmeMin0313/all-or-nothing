@@ -80,3 +80,20 @@
 .latest-news-arrow{position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:#c9a75d;transition:transform .3s ease}
 .latest-news-card:hover .latest-news-arrow{transform:translate(4px,-50%)}
 @media(max-width:760px){.event-x-head{display:block;padding:28px}.event-x-head .gold-link{display:inline-block;margin-top:22px}.latest-news-card{padding:28px 55px 28px 25px}.latest-news-arrow{right:22px}}
+
+/* ABOUT: full-width copy layout */
+.about-copy {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+.about-copy .about-main {
+  width: 100%;
+  max-width: none;
+}
+.about-copy .about-main p,
+.about-copy .about-main .about-title,
+.about-copy .about-main .about-subtitle {
+  width: 100%;
+  max-width: none;
+}
