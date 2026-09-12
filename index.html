@@ -74,9 +74,9 @@
         <h2>CAST</h2>
       </div>
       <div class="cast-grid">
-        <article class="cast-card">
-          <div class="cast-photo placeholder">CAST<br>PHOTO</div>
-          <div class="cast-info"><p class="role">HOST</p><h3>COMING SOON</h3><p>Profile coming soon.</p></div>
+        <article class="cast-card" data-host-profile="kotton" role="button" tabindex="0" aria-label="こっとんのプロフィールを開く">
+          <div class="cast-photo host-photo"><img src="pos.png" alt="こっとん"></div>
+          <div class="cast-info"><p class="role">HOST</p><h3>こっとん</h3><p>VIEW PROFILE</p></div>
         </article>
         <article class="cast-card">
           <div class="cast-photo placeholder">CAST<br>PHOTO</div>
@@ -207,5 +207,31 @@
     }
   </script>
   <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+
+<div class="host-profile-modal" id="hostProfileModal" aria-hidden="true">
+  <div class="host-profile-backdrop" data-close-profile></div>
+  <div class="host-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="hostProfileName">
+    <button class="host-profile-close" type="button" aria-label="プロフィールを閉じる" data-close-profile>×</button>
+    <div class="host-profile-media"><img src="pos.png" alt="こっとん"></div>
+    <div class="host-profile-info">
+      <span class="host-profile-label">HOST PROFILE</span>
+      <h3 id="hostProfileName">こっとん</h3>
+      <span class="host-profile-rule"></span>
+      <p class="host-profile-copy">ああああああああああああああああああああああああああああ</p>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const modal=document.getElementById('hostProfileModal');
+  const triggers=document.querySelectorAll('[data-host-profile="kotton"]');
+  if(!modal) return;
+  const open=()=>{modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('profile-modal-open');};
+  const close=()=>{modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('profile-modal-open');};
+  triggers.forEach(el=>{el.addEventListener('click',open);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});});
+  modal.querySelectorAll('[data-close-profile]').forEach(el=>el.addEventListener('click',close));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))close();});
+})();
+</script>
 </body>
 </html>
