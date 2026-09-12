@@ -296,54 +296,55 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* VIEW MORE — editorial link, not a button */
 .cast-more-wrap {
   display: flex;
   justify-content: center;
-  margin-top: 46px;
+  margin-top: 48px;
 }
 
 .cast-more-button {
   appearance: none;
   border: 0;
   background: transparent;
-  color: #c9a75d;
-  padding: 10px 18px 12px;
+  color: #b18a45;
+  padding: 8px 12px 14px;
   cursor: pointer;
   font-family: "Cormorant Garamond", serif;
-  font-size: 14px;
-  letter-spacing: .24em;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: .30em;
   text-transform: uppercase;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  transition: color .3s ease, transform .3s ease;
+  gap: 12px;
+  transition: color .35s ease, opacity .35s ease;
 }
 
 .cast-more-button:hover {
   color: #eee9df;
-  transform: translateY(-2px);
 }
 
 .cast-more-button:focus-visible {
-  outline: 1px solid #b18a45;
+  outline: 1px solid rgba(177,138,69,.75);
   outline-offset: 6px;
 }
 
 .cast-more-line {
   display: block;
-  width: 52px;
+  width: 46px;
   height: 1px;
   background: #b18a45;
-  transition: width .3s ease;
+  transition: width .4s ease, opacity .35s ease;
 }
 
 .cast-more-button:hover .cast-more-line {
-  width: 72px;
+  width: 68px;
 }
 
 @media (max-width: 760px) {
   .cast-more-wrap {
-    margin-top: 34px;
+    margin-top: 36px;
   }
 }
