@@ -94,10 +94,12 @@
         </article>
       </div>
       <div class="cast-more-wrap" aria-controls="castExtra" aria-expanded="false">
-        <button class="cast-more-button" id="castMoreButton" type="button" onclick="toggleCastMore()">
+        <a class="cast-more-link" id="castMoreButton" href="#cast" role="button"
+        aria-expanded="false" aria-controls="castExtra"
+        onclick="toggleCastMore(event)">
           <span class="cast-more-label">VIEW MORE</span>
           <span class="cast-more-line"></span>
-        </button>
+        </a>
       </div>
     </section>
 
@@ -216,17 +218,18 @@
 
 <script>
 
-function toggleCastMore() {
+function toggleCastMore(event) {
+  if (event) event.preventDefault();
   var grid = document.querySelector('.cast-grid');
   var wrap = document.querySelector('.cast-more-wrap');
-  var button = document.getElementById('castMoreButton');
-  if (!grid || !wrap || !button) return;
+  var link = document.getElementById('castMoreButton');
+  if (!grid || !wrap || !link) return;
 
   var expanded = grid.classList.toggle('is-expanded');
   wrap.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-  button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  link.setAttribute('aria-expanded', expanded ? 'true' : 'false');
 
-  var label = button.querySelector('.cast-more-label');
+  var label = link.querySelector('.cast-more-label');
   if (label) label.textContent = expanded ? 'SHOW LESS' : 'VIEW MORE';
 }
 
