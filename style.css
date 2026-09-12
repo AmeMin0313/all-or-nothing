@@ -367,74 +367,58 @@
     margin-top: 36px;
   }
 }
-/* VIEW MORE — editorial link, not a button */
+/* FINAL — unified section backgrounds */
+#about,
+#cast,
+#system,
+#event,
+#group {
+  background: #080706 !important;
+}
+
+/* FINAL — VIEW MORE / SHOW LESS editorial text link */
 .cast-more-wrap {
   display: flex;
   justify-content: center;
   margin-top: 48px;
 }
-
-.cast-more-button {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  color: #b18a45;
-  padding: 8px 12px 14px;
-  cursor: pointer;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 13px;
-  line-height: 1;
-  letter-spacing: .30em;
-  text-transform: uppercase;
+.cast-more-link {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  transition: color .35s ease, opacity .35s ease;
+  padding: 8px 12px 14px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #b18a45;
+  text-decoration: none;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: .30em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .35s ease;
 }
-
-.cast-more-button:hover {
+.cast-more-link:hover {
   color: #eee9df;
+  transform: none;
 }
-
-.cast-more-button:focus-visible {
+.cast-more-link:focus-visible {
   outline: 1px solid rgba(177,138,69,.75);
   outline-offset: 6px;
 }
-
 .cast-more-line {
   display: block;
   width: 46px;
   height: 1px;
   background: #b18a45;
-  transition: width .4s ease, opacity .35s ease;
+  transition: width .4s ease;
 }
-
-.cast-more-button:hover .cast-more-line {
-  width: 68px;
-}
-
+.cast-more-link:hover .cast-more-line { width: 68px; }
 @media (max-width: 760px) {
-  .cast-more-wrap {
-    margin-top: 36px;
-  }
-}
-
-/* Unified section background */
-#about,
-#cast,
-#system,
-#event,
-#group {
-  
-}
-
-
-/* Unified section background — final override */
-#about,
-#cast,
-#system,
-#event,
-#group {
-  background: transparent !important;
+  .cast-more-wrap { margin-top: 36px; }
 }
