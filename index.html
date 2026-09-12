@@ -87,17 +87,17 @@
           <div class="cast-photo host-photo"><img src="ribu.png" alt="りぶお"></div>
           <div class="cast-info"><p class="role">HOST</p><h3>りぶお</h3><p class="profile-trigger">VIEW PROFILE</p></div>
         </article>
-        <article class="cast-card" role="button" tabindex="0" aria-label="CAST 03のプロフィールを開く" onclick="openCastDialog('cast03ProfileModal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCastDialog('cast03ProfileModal')}">
-          <div class="cast-photo placeholder">CAST<br>PHOTO</div>
-          <div class="cast-info"><p class="role">HOST</p><h3>COMING SOON</h3><p class="profile-trigger">VIEW PROFILE</p></div>
+        <article class="cast-card" role="button" tabindex="0" aria-label="りゅうのプロフィールを開く" onclick="openCastDialog('ryuProfileModal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCastDialog('ryuProfileModal')}">
+          <div class="cast-photo host-photo"><img src="ryu.png" alt="こっとん"></div>
+          <div class="cast-info"><p class="role">HOST</p><h3>りゅう</h3><p class="profile-trigger">VIEW PROFILE</p></div>
         </article>
-        <article class="cast-card cast-card--extra" role="button" tabindex="0" aria-label="CAST 04のプロフィールを開く" onclick="openCastDialog('cast04ProfileModal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCastDialog('cast04ProfileModal')}">
-          <div class="cast-photo placeholder">CAST<br>PHOTO</div>
-          <div class="cast-info"><p class="role">HOST</p><h3>COMING SOON</h3><p class="profile-trigger">VIEW PROFILE</p></div>
+        <article class="cast-card cast-card--extra" role="button" tabindex="0" aria-label="Ciaoのプロフィールを開く" onclick="openCastDialog('ciaoProfileModal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCastDialog('ciaoProfileModal')}">
+          <div class="cast-photo host-photo"><img src="ciao.png" alt="Ciao"></div>
+          <div class="cast-info"><p class="role">HOST</p><h3>Ciao</h3><p class="profile-trigger">VIEW PROFILE</p></div>
         </article>
-        <article class="cast-card cast-card--extra" role="button" tabindex="0" aria-label="CAST 05のプロフィールを開く" onclick="openCastDialog('cast05ProfileModal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCastDialog('cast05ProfileModal')}">
-          <div class="cast-photo placeholder">CAST<br>PHOTO</div>
-          <div class="cast-info"><p class="role">HOST</p><h3>COMING SOON</h3><p class="profile-trigger">VIEW PROFILE</p></div>
+        <article class="cast-card cast-card--extra" role="button" tabindex="0" aria-label="あちののプロフィールを開く" onclick="openCastDialog('atiProfileModal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCastDialog('atiProfileModal')}">
+          <div class="cast-photo host-photo"><img src="ati.png" alt="あちの"></div>
+          <div class="cast-info"><p class="role">HOST</p><h3>あちの</h3><p class="profile-trigger">VIEW PROFILE</p></div>
         </article>
         <article class="cast-card cast-card--extra" role="button" tabindex="0" aria-label="CAST 06のプロフィールを開く" onclick="openCastDialog('cast06ProfileModal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCastDialog('cast06ProfileModal')}">
           <div class="cast-photo placeholder">CAST<br>PHOTO</div>
@@ -201,30 +201,45 @@
     </div>
   </div>
 
-  <div class="host-profile-modal" id="cast03ProfileModal" aria-hidden="true">
-    <div class="host-profile-backdrop" onclick="closeCastDialog('cast03ProfileModal')"></div>
-    <div class="host-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="cast03ProfileName">
-      <button class="host-profile-close" type="button" aria-label="プロフィールを閉じる" onclick="closeCastDialog('cast03ProfileModal')">×</button>
-      <div class="host-profile-media"><div class="cast-photo placeholder">CAST<br>PHOTO</div></div>
-      <div class="host-profile-info"><span class="host-profile-label">HOST PROFILE</span><h3 id="cast03ProfileName">COMING SOON</h3><span class="host-profile-rule"></span><p class="host-profile-copy">Profile coming soon.</p></div>
+  <div class="host-profile-modal" id="ryuProfileModal" aria-hidden="true">
+    <div class="host-profile-backdrop" onclick="closeCastDialog('ryuProfileModal')"></div>
+    <div class="host-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="ryuProfileName">
+      <button class="host-profile-close" type="button" aria-label="プロフィールを閉じる" onclick="closeCastDialog('ryuProfileModal')">×</button>
+      <div class="host-profile-media"><img src="ryu.png" alt="りゅう"></div>
+      <div class="host-profile-info">
+        <span class="host-profile-label">HOST PROFILE</span>
+        <h3 id="ryuProfileName">りゅう</h3>
+        <span class="host-profile-rule"></span>
+        <p class="host-profile-copy">ううううううううううううううううううううううううううううううう</p>
+      </div>
     </div>
   </div>
 
-  <div class="host-profile-modal" id="cast04ProfileModal" aria-hidden="true">
-    <div class="host-profile-backdrop" onclick="closeCastDialog('cast04ProfileModal')"></div>
-    <div class="host-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="cast04ProfileName">
-      <button class="host-profile-close" type="button" aria-label="プロフィールを閉じる" onclick="closeCastDialog('cast04ProfileModal')">×</button>
-      <div class="host-profile-media"><div class="cast-photo placeholder">CAST<br>PHOTO</div></div>
-      <div class="host-profile-info"><span class="host-profile-label">HOST PROFILE</span><h3 id="cast04ProfileName">COMING SOON</h3><span class="host-profile-rule"></span><p class="host-profile-copy">Profile coming soon.</p></div>
+  <div class="host-profile-modal" id="ciaoProfileModal" aria-hidden="true">
+    <div class="host-profile-backdrop" onclick="closeCastDialog('ciaoProfileModal')"></div>
+    <div class="host-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="ciaoProfileName">
+      <button class="host-profile-close" type="button" aria-label="プロフィールを閉じる" onclick="closeCastDialog('ciaoProfileModal')">×</button>
+      <div class="host-profile-media"><img src="ciao.png" alt="Ciao"></div>
+      <div class="host-profile-info">
+        <span class="host-profile-label">HOST PROFILE</span>
+        <h3 id="ciaoProfileName">Ciao</h3>
+        <span class="host-profile-rule"></span>
+        <p class="host-profile-copy">ええええええええええええええええええええええええええええ</p>
+      </div>
     </div>
   </div>
 
-  <div class="host-profile-modal" id="cast05ProfileModal" aria-hidden="true">
-    <div class="host-profile-backdrop" onclick="closeCastDialog('cast05ProfileModal')"></div>
-    <div class="host-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="cast05ProfileName">
-      <button class="host-profile-close" type="button" aria-label="プロフィールを閉じる" onclick="closeCastDialog('cast05ProfileModal')">×</button>
-      <div class="host-profile-media"><div class="cast-photo placeholder">CAST<br>PHOTO</div></div>
-      <div class="host-profile-info"><span class="host-profile-label">HOST PROFILE</span><h3 id="cast05ProfileName">COMING SOON</h3><span class="host-profile-rule"></span><p class="host-profile-copy">Profile coming soon.</p></div>
+  <div class="host-profile-modal" id="atiProfileModal" aria-hidden="true">
+    <div class="host-profile-backdrop" onclick="closeCastDialog('atiProfileModal')"></div>
+    <div class="host-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="atiProfileName">
+      <button class="host-profile-close" type="button" aria-label="プロフィールを閉じる" onclick="closeCastDialog('atiProfileModal')">×</button>
+      <div class="host-profile-media"><img src="ati.png" alt="あちの"></div>
+      <div class="host-profile-info">
+        <span class="host-profile-label">HOST PROFILE</span>
+        <h3 id="atiProfileName">あちの</h3>
+        <span class="host-profile-rule"></span>
+        <p class="host-profile-copy">おおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお</p>
+      </div>
     </div>
   </div>
 
