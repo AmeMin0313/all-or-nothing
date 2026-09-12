@@ -74,15 +74,10 @@
         <h2>CAST</h2>
       </div>
       <div class="cast-grid">
-        <article class="cast-card" data-host-profile="kotton" role="button" tabindex="0" aria-label="こっとんのプロフィールを開く" onclick="toggleHostProfile(event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleHostProfile(event)}">
+        <article class="cast-card" data-host-profile="kotton" role="button" tabindex="0" aria-label="こっとんのプロフィールを開く" onclick="openHostProfile(event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openHostProfile(event)}">
           <div class="cast-photo host-photo"><img src="pos.png" alt="こっとん"></div>
           <div class="cast-info"><p class="role">HOST</p><h3>こっとん</h3><p class="profile-trigger">VIEW PROFILE</p></div>
-          <div class="cast-profile-panel">
-            <span class="host-profile-label">HOST PROFILE</span>
-            <h3>こっとん</h3>
-            <span class="host-profile-rule"></span>
-            <p>ああああああああああああああああああああああああああああ</p>
-          </div>
+
         </article>
         <article class="cast-card">
           <div class="cast-photo placeholder">CAST<br>PHOTO</div>
@@ -175,6 +170,20 @@
     <small>© ALL OR NOTHING</small>
   </footer>
 
+  <div class="host-profile-modal" id="hostProfileModal" aria-hidden="true">
+    <div class="host-profile-backdrop" onclick="closeHostProfile()"></div>
+    <div class="host-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="hostProfileName">
+      <button class="host-profile-close" type="button" aria-label="プロフィールを閉じる" onclick="closeHostProfile()">×</button>
+      <div class="host-profile-media"><img src="pos.png" alt="こっとん"></div>
+      <div class="host-profile-info">
+        <span class="host-profile-label">HOST PROFILE</span>
+        <h3 id="hostProfileName">こっとん</h3>
+        <span class="host-profile-rule"></span>
+        <p class="host-profile-copy">ああああああああああああああああああああああああああああ</p>
+      </div>
+    </div>
+  </div>
+
   <script>
     const body = document.body;
 
@@ -216,15 +225,24 @@
 
 
 <script>
-function toggleHostProfile(event) {
+function openHostProfile(event) {
   if (event) event.stopPropagation();
-  var card = document.querySelector('.cast-card[data-host-profile="kotton"]');
-  if (!card) return;
-  var expanded = card.classList.toggle('is-expanded');
-  card.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-  var trigger = card.querySelector('.profile-trigger');
-  if (trigger) trigger.textContent = expanded ? 'CLOSE PROFILE' : 'VIEW PROFILE';
+  var modal = document.getElementById('hostProfileModal');
+  if (!modal) return;
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('profile-modal-open');
 }
+function closeHostProfile() {
+  var modal = document.getElementById('hostProfileModal');
+  if (!modal) return;
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('profile-modal-open');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeHostProfile();
+});
 </script>
 </body>
 </html>
