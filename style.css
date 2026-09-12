@@ -66,20 +66,16 @@
 .x-timeline-wrap{border:1px solid #302821;background:#090807;overflow:hidden}.x-timeline-head{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:32px 38px;border-bottom:1px solid #302821;background:linear-gradient(120deg,#120b08,#090807)}.x-timeline-head h3{font-family:"Cormorant Garamond",serif;font-size:32px;font-weight:500;letter-spacing:.08em;margin:4px 0 8px}.x-timeline-head p:not(.role){color:#817a72;margin:0}.x-timeline-box{min-height:700px;padding:10px 18px;background:#050403}.x-timeline-box .twitter-timeline{display:block}.x-fallback{text-align:center;color:#817a72;padding:120px 20px;font-family:"Noto Serif JP",serif}.x-fallback a{color:#d8b76a}.access-request h3{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:500;margin:5px 0 15px}.access-request p:not(.role){color:#918a82;max-width:650px}@media(max-width:760px){.x-timeline-head{display:block;padding:28px}.x-timeline-head .gold-link{display:inline-block;margin-top:22px}.x-timeline-box{min-height:650px;padding:5px}.access-request h3{font-size:30px}}
 
 
-/* EVENT — latest announcement card */
+/* EVENT — official X card */
 .event-news-wrap{width:min(100%,860px);margin:28px auto 22px}
-.event-x-head{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:32px 38px;border:1px solid #302821;border-bottom:0;background:linear-gradient(120deg,#120b08,#090807)}
-.event-x-head h3{font-family:"Cormorant Garamond",serif;font-size:32px;font-weight:500;letter-spacing:.08em;margin:4px 0 8px}
-.event-x-head p:not(.role){color:#817a72;margin:0}
-.latest-news-card{position:relative;display:block;padding:34px 72px 34px 38px;border:1px solid rgba(196,154,72,.38);background:linear-gradient(145deg,rgba(29,21,16,.96),rgba(7,6,6,.98));text-decoration:none;overflow:hidden;transition:transform .35s ease,border-color .35s ease,background .35s ease}
-.latest-news-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,transparent,#c7a45d,transparent);opacity:.9}
-.latest-news-card:hover{transform:translateY(-3px);border-color:rgba(216,183,106,.75);background:linear-gradient(145deg,rgba(38,27,20,.98),rgba(8,7,7,.99))}
-.latest-news-label{font-size:.62rem;letter-spacing:.28em;color:#c9a75d;margin-bottom:12px}
-.latest-news-title{font-family:"Noto Serif JP",serif;font-size:1.08rem;letter-spacing:.08em;color:#eee;margin-bottom:15px}
-.latest-news-date{font-family:"Cormorant Garamond",serif;font-size:.92rem;letter-spacing:.18em;color:#8d857b}
-.latest-news-arrow{position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:#c9a75d;transition:transform .3s ease}
-.latest-news-card:hover .latest-news-arrow{transform:translate(4px,-50%)}
-@media(max-width:760px){.event-x-head{display:block;padding:28px}.event-x-head .gold-link{display:inline-block;margin-top:22px}.latest-news-card{padding:28px 55px 28px 25px}.latest-news-arrow{right:22px}}
+.event-x-card{position:relative;display:flex;justify-content:space-between;align-items:center;gap:30px;padding:34px 72px 34px 38px;border:1px solid rgba(196,154,72,.38);background:linear-gradient(145deg,rgba(29,21,16,.96),rgba(7,6,6,.98));text-decoration:none;overflow:hidden;transition:transform .35s ease,border-color .35s ease,background .35s ease}
+.event-x-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,transparent,#c7a45d,transparent);opacity:.9}
+.event-x-card:hover{transform:translateY(-3px);border-color:rgba(216,183,106,.75);background:linear-gradient(145deg,rgba(38,27,20,.98),rgba(8,7,7,.99))}
+.event-x-card h3{font-family:"Cormorant Garamond",serif;font-size:32px;font-weight:500;letter-spacing:.08em;margin:4px 0 8px;color:#eee9df}
+.event-x-card p:not(.role){color:#817a72;margin:0}
+.event-x-arrow{position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:1.25rem;color:#c9a75d;transition:transform .3s ease}
+.event-x-card:hover .event-x-arrow{transform:translate(4px,-50%)}
+@media(max-width:760px){.event-x-card{padding:28px 55px 28px 25px}.event-x-arrow{right:22px}}
 
 /* ABOUT — unified with the rest of the site */
 .about-wide-copy {
