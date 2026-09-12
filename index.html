@@ -26,8 +26,8 @@
     <nav class="nav">
       <a href="#about">ABOUT</a>
       <a href="#cast">CAST</a>
-      <a href="#event">EVENT</a>
       <a href="#system">SYSTEM</a>
+      <a href="#event">EVENT</a>
       <a href="#group">GROUP</a>
       <a href="#access">ACCESS</a>
     </nav>
@@ -74,9 +74,15 @@
         <h2>CAST</h2>
       </div>
       <div class="cast-grid">
-        <article class="cast-card" data-host-profile="kotton" role="button" tabindex="0" aria-label="こっとんのプロフィールを開く" onclick="openHostProfile(event)">
+        <article class="cast-card" data-host-profile="kotton" role="button" tabindex="0" aria-label="こっとんのプロフィールを開く" onclick="toggleHostProfile(event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleHostProfile(event)}">
           <div class="cast-photo host-photo"><img src="pos.png" alt="こっとん"></div>
-          <div class="cast-info"><p class="role">HOST</p><h3>こっとん</h3><p>VIEW PROFILE</p></div>
+          <div class="cast-info"><p class="role">HOST</p><h3>こっとん</h3><p class="profile-trigger">VIEW PROFILE</p></div>
+          <div class="cast-profile-panel">
+            <span class="host-profile-label">HOST PROFILE</span>
+            <h3>こっとん</h3>
+            <span class="host-profile-rule"></span>
+            <p>ああああああああああああああああああああああああああああ</p>
+          </div>
         </article>
         <article class="cast-card">
           <div class="cast-photo placeholder">CAST<br>PHOTO</div>
@@ -89,9 +95,21 @@
       </div>
     </section>
 
-    <section id="event" class="section event">
+    <section id="system" class="section system">
       <div class="section-heading">
         <span>03</span>
+        <h2>SYSTEM</h2>
+      </div>
+      <div class="system-grid">
+        <div class="system-item"><span>01</span><h3>OPEN</h3><p>営業日時・集合時間を掲載します。</p></div>
+        <div class="system-item"><span>02</span><h3>PRICE</h3><p>料金・ドリンク・指名システムなど。</p></div>
+        <div class="system-item"><span>03</span><h3>HOW TO</h3><p>初めての方にも分かりやすくご案内。</p></div>
+      </div>
+    </section>
+
+    <section id="event" class="section event">
+      <div class="section-heading">
+        <span>04</span>
         <h2>EVENT</h2>
       </div>
       <div class="event-news-wrap">
@@ -111,18 +129,6 @@
           <div class="latest-news-date">2026.09.09</div>
           <span class="latest-news-arrow">↗</span>
         </a>
-      </div>
-    </section>
-
-    <section id="system" class="section system">
-      <div class="section-heading">
-        <span>04</span>
-        <h2>SYSTEM</h2>
-      </div>
-      <div class="system-grid">
-        <div class="system-item"><span>01</span><h3>OPEN</h3><p>営業日時・集合時間を掲載します。</p></div>
-        <div class="system-item"><span>02</span><h3>PRICE</h3><p>料金・ドリンク・指名システムなど。</p></div>
-        <div class="system-item"><span>03</span><h3>HOW TO</h3><p>初めての方にも分かりやすくご案内。</p></div>
       </div>
     </section>
 
@@ -208,40 +214,17 @@
   </script>
   <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 
-<div class="host-profile-modal" id="hostProfileModal" aria-hidden="true">
-  <div class="host-profile-backdrop" onclick="closeHostProfile()"></div>
-  <div class="host-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="hostProfileName">
-    <button class="host-profile-close" type="button" aria-label="プロフィールを閉じる" onclick="closeHostProfile()">×</button>
-    <div class="host-profile-media">
-      <img src="pos.png" alt="こっとん">
-    </div>
-    <div class="host-profile-info">
-      <span class="host-profile-label">HOST PROFILE</span>
-      <h3 id="hostProfileName">こっとん</h3>
-      <span class="host-profile-rule"></span>
-      <p class="host-profile-copy">ああああああああああああああああああああああああああああ</p>
-    </div>
-  </div>
-</div>
+
 <script>
-function openHostProfile(event) {
+function toggleHostProfile(event) {
   if (event) event.stopPropagation();
-  var modal = document.getElementById('hostProfileModal');
-  if (!modal) return;
-  modal.classList.add('is-open');
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('profile-modal-open');
+  var card = document.querySelector('.cast-card[data-host-profile="kotton"]');
+  if (!card) return;
+  var expanded = card.classList.toggle('is-expanded');
+  card.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  var trigger = card.querySelector('.profile-trigger');
+  if (trigger) trigger.textContent = expanded ? 'CLOSE PROFILE' : 'VIEW PROFILE';
 }
-function closeHostProfile() {
-  var modal = document.getElementById('hostProfileModal');
-  if (!modal) return;
-  modal.classList.remove('is-open');
-  modal.setAttribute('aria-hidden', 'true');
-  document.body.classList.remove('profile-modal-open');
-}
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeHostProfile();
-});
 </script>
 </body>
 </html>

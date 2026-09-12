@@ -279,3 +279,108 @@
   }
   .host-profile-info h3{font-size:30px}
 }
+
+
+/* CAST — inline host profile expansion */
+.cast-card[data-host-profile="kotton"]{
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr;
+  align-content:start;
+  transition:grid-column .55s ease, transform .4s ease, border-color .4s ease, background .4s ease;
+}
+.cast-card[data-host-profile="kotton"].is-expanded{
+  grid-column:span 2;
+  grid-template-columns:1fr 1fr;
+  border-color:#806338;
+  background:#0f0c0a;
+  transform:none;
+}
+.cast-card[data-host-profile="kotton"].is-expanded .cast-photo{
+  height:100%;
+  min-height:360px;
+  aspect-ratio:auto;
+}
+.cast-card[data-host-profile="kotton"].is-expanded .cast-info{
+  grid-column:1;
+}
+.cast-profile-panel{
+  display:grid;
+  grid-column:2;
+  grid-row:1 / span 2;
+  align-content:center;
+  padding:48px 42px;
+  border-left:1px solid #302821;
+  background:linear-gradient(145deg,#15100c,#090807);
+  opacity:0;
+  transform:translateX(18px);
+  pointer-events:none;
+  transition:opacity .45s ease .12s, transform .45s ease .12s;
+}
+.cast-card[data-host-profile="kotton"].is-expanded .cast-profile-panel{
+  opacity:1;
+  transform:none;
+  pointer-events:auto;
+}
+.cast-profile-panel .host-profile-label{
+  display:block;
+  margin-bottom:14px;
+  color:#b18a45;
+  font:12px/1 "Cormorant Garamond",serif;
+  letter-spacing:.28em;
+}
+.cast-profile-panel h3{
+  margin:0;
+  color:#eee9df;
+  font-family:"Noto Serif JP",serif;
+  font-size:34px;
+  font-weight:400;
+  letter-spacing:.12em;
+}
+.cast-profile-panel .host-profile-rule{
+  display:block;
+  width:58px;
+  height:1px;
+  margin:18px 0 24px;
+  background:#b18a45;
+}
+.cast-profile-panel p{
+  margin:0;
+  color:#a9a299;
+  font-family:"Noto Serif JP",serif;
+  font-size:14px;
+  line-height:2;
+  letter-spacing:.06em;
+  word-break:break-all;
+}
+.cast-card[data-host-profile="kotton"] .profile-trigger{
+  transition:color .25s ease;
+}
+.cast-card[data-host-profile="kotton"]:hover .profile-trigger,
+.cast-card[data-host-profile="kotton"].is-expanded .profile-trigger{
+  color:#d8b76a;
+}
+@media(max-width:760px){
+  .cast-card[data-host-profile="kotton"].is-expanded{
+    grid-column:span 1;
+    grid-template-columns:1fr;
+  }
+  .cast-card[data-host-profile="kotton"].is-expanded .cast-photo{
+    min-height:0;
+    aspect-ratio:4/5;
+    height:auto;
+  }
+  .cast-profile-panel{
+    grid-column:1;
+    grid-row:auto;
+    border-left:0;
+    border-top:1px solid #302821;
+    padding:34px 28px 38px;
+    transform:translateY(14px);
+  }
+  .cast-card[data-host-profile="kotton"].is-expanded .cast-profile-panel{
+    transform:none;
+  }
+}
