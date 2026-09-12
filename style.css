@@ -384,3 +384,24 @@
     transform:none;
   }
 }
+
+/* CAST profile expansion */
+.cast-card[data-host-profile="kotton"]{cursor:pointer;position:relative;display:grid;grid-template-rows:auto auto;overflow:hidden;transition:grid-column .45s ease,border-color .4s ease,transform .4s ease,background .4s ease;}
+.cast-card[data-host-profile="kotton"] .cast-photo{grid-column:1;grid-row:1;}
+.cast-card[data-host-profile="kotton"] .cast-info{grid-column:1;grid-row:2;}
+.cast-profile-panel{display:none;opacity:0;}
+.cast-card[data-host-profile="kotton"].is-expanded{grid-column:span 2;grid-template-columns:minmax(220px,1fr) minmax(240px,1fr);grid-template-rows:1fr;align-items:stretch;transform:none;background:#0d0b09;border-color:#806338;}
+.cast-card[data-host-profile="kotton"].is-expanded .cast-photo{grid-column:1;grid-row:1;aspect-ratio:auto;min-height:100%;}
+.cast-card[data-host-profile="kotton"].is-expanded .cast-info{grid-column:1;grid-row:1;align-self:end;background:linear-gradient(transparent,rgba(13,11,9,.98) 35%);padding-top:70px;}
+.cast-card[data-host-profile="kotton"].is-expanded .cast-profile-panel{display:flex;grid-column:2;grid-row:1;opacity:1;flex-direction:column;justify-content:center;padding:42px 36px;border-left:1px solid #302821;animation:castProfileIn .45s ease both;}
+.cast-profile-panel h3{font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:500;letter-spacing:.1em;margin:4px 0;color:#eee9df;}
+.cast-profile-panel p{font-family:"Noto Serif JP",serif;color:#918a82;font-size:14px;line-height:2;letter-spacing:.05em;margin:0;}
+.cast-profile-panel .host-profile-label{display:block;margin-bottom:10px;color:#a98545;font:12px/1 "Cormorant Garamond",serif;letter-spacing:.28em;}
+.cast-profile-panel .host-profile-rule{display:block;width:48px;height:1px;background:#a98545;margin:16px 0 22px;}
+@keyframes castProfileIn{from{opacity:0;transform:translateX(15px)}to{opacity:1;transform:none}}
+@media(max-width:760px){
+  .cast-card[data-host-profile="kotton"].is-expanded{grid-column:auto;grid-template-columns:1fr;grid-template-rows:auto auto auto;}
+  .cast-card[data-host-profile="kotton"].is-expanded .cast-photo{grid-column:1;grid-row:1;aspect-ratio:4/5;min-height:0;}
+  .cast-card[data-host-profile="kotton"].is-expanded .cast-info{grid-column:1;grid-row:2;background:none;padding-top:22px;}
+  .cast-card[data-host-profile="kotton"].is-expanded .cast-profile-panel{grid-column:1;grid-row:3;border-left:0;border-top:1px solid #302821;padding:30px 22px;}
+}
